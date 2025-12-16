@@ -11,8 +11,11 @@ Semana: 8
 
 ### Comandos
 npm install
+
 npm start
+
 npm test -- --coverage --watchAll=false
+
 npx cypress open
 
 ### Cumplimiento de pauta
