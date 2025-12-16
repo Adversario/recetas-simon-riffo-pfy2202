@@ -1,0 +1,218 @@
+:root{
+  --bg: #0b1020;
+  --panel: #111a33;
+  --panel-2: rgba(255,255,255,.06);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.68);
+  --border: rgba(255,255,255,.10);
+  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --accent: #7aa7ff;
+  --danger: #ff7a7a;
+  --max: 920px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  background:
+    radial-gradient(1200px 500px at 20% 10%, rgba(122,167,255,.25), transparent 55%),
+    radial-gradient(900px 450px at 85% 20%, rgba(255,122,122,.18), transparent 55%),
+    var(--bg);
+  color: var(--text);
+}
+
+.container{
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.app__header{
+  padding: 28px 0 10px;
+}
+
+.title{
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: .2px;
+}
+.subtitle{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.headerRow{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.content{
+  padding: 18px 0 36px;
+}
+
+.card{
+  background: linear-gradient(180deg, var(--panel), rgba(17,26,51,.75));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.card__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.card__title{
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: .2px;
+}
+
+.pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.list__item{
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+}
+
+.item__button{
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+}
+.item__button:hover{
+  background: rgba(255,255,255,.06);
+}
+.item__button:focus{
+  outline: 2px solid rgba(122,167,255,.45);
+  outline-offset: -2px;
+}
+
+.item__main{
+  display: grid;
+  gap: 4px;
+}
+.item__name{
+  font-weight: 650;
+}
+.item__meta{
+  color: var(--muted);
+  font-size: 13px;
+}
+.item__id{
+  font-family: var(--mono);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hint{
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+@media (max-width: 720px){
+  .grid{ grid-template-columns: 1fr; }
+  .headerRow{ flex-direction: column; align-items: stretch; }
+}
+
+.kv{
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  background: rgba(255,255,255,.04);
+  display: grid;
+  gap: 4px;
+}
+.kv__k{
+  color: var(--muted);
+  font-size: 12px;
+}
+.kv__v{
+  font-weight: 650;
+}
+
+.sectionTitle{
+  margin: 14px 0 8px;
+  font-size: 14px;
+}
+.bullets{
+  margin: 0 0 10px;
+  padding-left: 18px;
+  color: var(--text);
+}
+.paragraph{
+  margin: 0;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.muted{ color: var(--muted); margin: 0; }
+.card--error{
+  border-color: rgba(255,122,122,.35);
+}
+.errorTitle{
+  margin: 0 0 6px;
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.btn{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.btn:hover{ background: rgba(255,255,255,.09); }
+
+.footer{
+  padding: 18px 0 28px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
